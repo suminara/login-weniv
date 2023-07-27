@@ -1,0 +1,229 @@
+.a11y {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: 100,400,500,700;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(201, 201, 201);
+    font-family: 'SpoqaHanSansNeo-Regular';
+}
+
+.login-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 520px;
+    border-radius: 10px;
+    border: 1px solid var(--c-4-c-4-c-4, #C4C4C4);
+}
+
+.login-modal header {
+    color: #000;
+    font-size: 16px; font-weight: 500;
+    height: 58px;
+    border-bottom: 1px solid #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-modal header button {
+    position: absolute;
+    right: 24px;
+}
+
+/* 로그인창 */
+
+.login-modal main {
+    padding: 26px 24px 25px;
+}
+
+.login-modal main .greet {
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.login-modal main form #id,#pw {
+    width: 472px;
+height: 50px;
+border-radius: 5px;
+border: 1px solid var(--c-4-c-4-c-4, #C4C4C4);
+background: #FFF;
+}
+
+.login-modal main form input{
+    color: var(--767676, #767676);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px 16px;
+}
+
+.login-modal main form .error {
+    display: none;
+    color: #F4492E;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.login-modal main form input:invalid+ .error {
+    display: block;
+}
+
+.login-modal main form #id:invalid {
+    border: 2px solid #F4492E;
+}
+
+.login-modal main form #pw {
+    margin-top: 10px;
+}
+
+
+/* 체크박스 */
+
+.login-modal main form .cb-lbl {
+    color: var(--767676, #767676);
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-top: 17px
+}
+
+.login-modal main form .cb-lbl::before {
+    content: '';
+    width: 22px; height: 22px;
+    position: absolute;
+    background-image: url(./img/check-box.svg);
+    background-repeat: no-repeat ;
+    left:0; bottom: -2px;
+    vertical-align: -5px;
+}
+
+.login-modal main form .cb-lbl::after {
+    content: '';
+    width: 22px; height: 22px;
+    position: absolute;
+    background-image: url(./img/checked-box.svg);
+    background-repeat: no-repeat ;
+    left:0; bottom: -2px;
+    vertical-align: -5px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.login-modal main form #checkbox:checked+.cb-lbl::after {
+    opacity: 1;
+}
+
+
+.login-modal main form .btn-login {
+    display: block;
+    width: 472px; height: 50px;
+    border-radius: 5px;
+    background: #2F80ED;
+    
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+
+    margin: 20px 0;
+}
+
+.login-modal main .join-find {
+    position: relative;
+    color: var(--767676, #767676);
+    width: 205px;
+    margin: auto;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-modal main .join-find a:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    background-color: var(--767676, #767676);
+    width: 1.2px; height: 16px;
+    margin-left: 14px;
+    cursor: default;
+}
+
+.login-modal main .join-find::after{
+    content: '또는';
+    position: absolute;
+    color: var(--767676, #767676);
+    background-color: #fff;
+    padding: 0 13px;
+    font-size: 14px;
+    font-weight: 400;
+    left: 50%; top:45px;
+    transform: translateX(-50%);
+}
+
+
+/* 소셜로그인  */
+
+
+.login-modal .outside-login {
+    border-top: 1px solid #C4C4C4;
+    margin-top: 38px;
+    padding-top: 29px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.login-modal .outlog {
+    width: 472px;
+height: 50px;
+flex-shrink: 0;
+border-radius: 5px;
+border: 1px solid var(--767676, #767676);
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+color: var(--767676, #767676);
+font-size: 16px;
+font-weight: 500;
+}
+
+.login-modal .outlog img {
+    margin-right: auto;
+    margin: 11px auto 11px 12px;
+    flex-basis: 0;
+}
+.login-modal .outlog p {
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.login-modal .fac {border: 1px solid #2D9CDB;}
+.login-modal .nav {border: 1px solid #00BF18;}
+.login-modal .kak {border: 1px solid #F2C94C;}
